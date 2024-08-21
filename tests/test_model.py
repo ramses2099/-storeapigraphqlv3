@@ -1,6 +1,6 @@
 import pytest
 import os
-from models import User, Category, Product
+from src.models import User, Category, Product
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
 
