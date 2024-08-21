@@ -1,12 +1,13 @@
-from flask import Flask, request, jsonify, render_template
-from typing import Optional
-from db import init_db
-
+from flask import Flask
+from strawberry.flask.views import GraphQLView
+from database import init_db
+from api.schema import schema
 
 # init db
 init_db()
 
 app = Flask(__name__)
+app.add_url_rule('/graphql', view_func=GraphQLView.as_view('graphql', schema=schema, graphiql=True))
 
 if __name__ == '__main__':
     app.run(debug=True)
