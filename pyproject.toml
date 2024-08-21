@@ -1,0 +1,9 @@
+[project]
+name = "storeapigraphqlv3"
+version = "0.0.1"
+dependencies = [
+    'strawberry-graphql[debug-server]',
+    'flask',
+    'sqlalchemy',
+    'pytest'
+]
